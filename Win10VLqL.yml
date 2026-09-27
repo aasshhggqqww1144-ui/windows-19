@@ -1,0 +1,40 @@
+windows_10:
+  profile: "VLqL"
+  edition: "Windows 10 Pro"
+  version: "22H2"
+  language: "en-US"
+  timezone: "UTC"
+  hostname: "win10-vm"
+  admin_username: "Administrator"
+  admin_password: "ChangeMe123!"
+  product_key: "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
+
+  iso:
+    path: "/isos/Win10_22H2_English_x64.iso"
+    checksum: "sha256:replace-with-actual-checksum"
+    source: "local"
+
+  hardware:
+    cpu_cores: 4
+    memory_mb: 8192
+    disk_gb: 128
+
+  networking:
+    adapter: "Default Switch"
+    dhcp: true
+
+  boot:
+    secure_boot: false
+    uefi: true
+
+  post_install:
+    enable_windows_updates: true
+    install_choco_packages:
+      - git
+      - vscode
+      - 7zip
+      - googlechrome
+
+  notes:
+    - "Update the ISO path and product key to match your environment."
+    - "Use this as a base template for VM provisioning or lab automation."
